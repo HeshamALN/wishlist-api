@@ -25,8 +25,6 @@ class ListSerializer(serializers.ModelSerializer):
 
 class DetailSerializer(serializers.ModelSerializer):
 	list_of_favs = serializers.SerializerMethodField()
-
-
 	class Meta:
 		model = Item
 		fields = ['id', 'image','name','description', 'list_of_favs']

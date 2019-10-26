@@ -40,8 +40,9 @@ urlpatterns = [
 
 
 
-    path('login/', TokenObtainPairView.as_view(), name='api-login'),
-    path('items/', api_views.ItemListView.as_view(), name='api-item-list'),
+    path('login/', TokenObtainPairView.as_view(), name='login'),
+    path('api/list/', api_views.ItemListView.as_view(), name='item-list'),
+    path('api/detail/<int:item_id>/', api_views.ItemDetailView.as_view(), name='item-detail'),#make detail
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
